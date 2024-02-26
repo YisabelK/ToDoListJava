@@ -3,10 +3,9 @@ package com.todo.service;
 import com.todo.dao.TodoItem;
 import com.todo.dao.TodoList;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class TodoUtil {
     public static void createItem (TodoList list) {
@@ -96,7 +95,30 @@ public class TodoUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public static void loadList (TodoList l, String filename) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            String line;
+            int count = 0;
+            while ((line = br.readLine()) !=null) {
+                StringTokenizer st = new StringTokenizer(line, "##");
+                String title = st.nextToken();
+                String description = st.nextToken();
+                String current_date = st.nextToken();
+                TodoItem item = new TodoItem(title, description);
+                item.setCurrent_date(current_date);
+                l.addItem(item);
+                count++;
+            }
+            br.close();
+            System.out.println(count+"개의 항목을 읽었습니다.");
+        } catch (FileNotFoundException e) {
+            System.out.println(filename+" 파일이 없습니다.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
