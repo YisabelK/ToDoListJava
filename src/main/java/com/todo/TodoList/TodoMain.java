@@ -34,18 +34,18 @@ public class TodoMain {
                     break;
                 case "ls_name_asc":
                     l.sortByName();
-                    System.out.println("제목순으로 정렬하였습니다.");
+                    System.out.println("Sorted by title.");
                     isList = true;
                     break;
                 case "ls_name_desc":
                     l.sortByName();
                     l.reverseList();
-                    System.out.println("제목역순으로 정렬하였습니다.");
+                    System.out.println("Sorted in reverse order by title.");
                     isList = true;
                     break;
                 case "ls_date":
                     l.sortByDate();
-                    System.out.println("날짜순으로 정렬하였습니다.");
+                    System.out.println("Sorted by date.");
                     isList = true;
                     break;
                 case "help":
@@ -55,7 +55,7 @@ public class TodoMain {
                     quit = true;
                     break;
                 default:
-                    System.out.println("정확한 명령어를 입력하세요. (도움말 - help)");
+                    System.out.println("Please enter a valid command. (For help - type help)");
                     break;
             }
             if (isList) TodoUtil.listAll(l);

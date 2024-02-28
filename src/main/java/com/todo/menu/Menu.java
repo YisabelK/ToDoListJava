@@ -4,15 +4,15 @@ public class Menu {
 
     public static void displaymenu () {
         System.out.println();
-        System.out.println("<ToDoList 관리 명령어 사용법>");
-        System.out.println("add - 항목 추가");
-        System.out.println("del - 항목 삭제");
-        System.out.println("edit - 항목 수정");
-        System.out.println("ls - 전체 목록");
-        System.out.println("ls_name_asc - 제목순 정렬");
-        System.out.println("ls_name_desc - 제목역순 정렬");
-        System.out.println("ls_date - 날짜순 정렬");
-        System.out.println("exit - 종료");
+        System.out.println("<Usage Guide for Managing ToDoList Commands>");
+        System.out.println("add - Add item");
+        System.out.println("del - Delete item");
+        System.out.println("edit - Edit item");
+        System.out.println("ls - Complete list");
+        System.out.println("ls_name_asc - Sort by title");
+        System.out.println("ls_name_desc - Sort by title in reverse order");
+        System.out.println("ls_date - Sort by date");
+        System.out.println("exit - Exit");
     }
 
     public static void prompt ()
