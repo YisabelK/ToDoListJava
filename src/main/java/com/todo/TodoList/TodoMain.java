@@ -3,10 +3,14 @@ package com.todo.TodoList;
 import com.todo.dao.TodoList;
 import com.todo.menu.Menu;
 import com.todo.service.TodoUtil;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Scanner;
 
 public class TodoMain {
+
     public static void start () {
         Scanner sc = new Scanner(System.in);
         TodoList l = new TodoList ();
